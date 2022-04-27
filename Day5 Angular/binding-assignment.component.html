@@ -1,0 +1,9 @@
+<fieldset>
+    <legend>Product Calculate</legend>
+    Product Name: <input type="text" [(ngModel)]="productName"/><br/><br/>
+    Unit Price: <input type="text" [(ngModel)]="unitPrice"/><br/><br/>
+    Quantity:<input type="text" [(ngModel)]="quantity"/><br/><br/>    
+    <button  (click)="calculate()">Get Total</button>
+        <p style="color: Red;" *ngIf="sum>700">Total Amount: {{sum}}</p>
+        <p style="color: green;" *ngIf="sum<700">Total Amount: {{sum}}</p>    
+</fieldset>

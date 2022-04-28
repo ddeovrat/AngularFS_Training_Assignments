@@ -1,0 +1,4 @@
+<!-- <app-product-list></app-product-list> -->
+
+<app-employee-list [sortOrder]="selectedOrder" ></app-employee-list>
+<app-header (onSortingChanged)="updateSorting($event)"></app-header>

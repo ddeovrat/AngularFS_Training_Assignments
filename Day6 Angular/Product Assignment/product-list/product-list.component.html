@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="category"/>
+<div *ngFor="let item of prodyctListArray">
+    <app-product-details  
+    *ngIf="item.category==category" [prodObj]="item">
+ 
+    </app-product-details>
+
+</div>

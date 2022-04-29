@@ -1,0 +1,58 @@
+PercentPipe: Explanation
+
+Angular PercentPipe is an angular Pipe API that formats a number as a percentage according to locale rules. It belongs to CommonModule. Find the syntax.
+
+number_expression | percent[:digitInfo]
+
+Find the description.
+number_expression: An angular expression that will give output a number.
+percent : A pipe keyword that is used with pipe operator and it converts number into percent.
+digitInfo: It defines a percentage format. We have described the use of digitInfo in DecimalPipe section. It is used with following syntax.
+
+{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+
+Now find some sample examples.
+1. Using default format:
+
+minIntegerDigits = 1
+minFractionDigits = 0
+maxFractionDigits = 3
+
+Now find a number that will be changed into percentage.
+num1 = 2.5; Now use Percent Pipe
+{{num1 | percent}} Find the output.
+250% 
+2. Use format '2.2-5'
+minIntegerDigits = 2
+minFractionDigits = 2
+maxFractionDigits = 5
+
+Now find the number that will be changed into percentage.
+num1 = 2.5; Now use Percent Pipe.
+{{num1 | percent:'2.2-5'}} Find the output.
+250.00% We will observe that there is two digits in fraction part. This is because minimum fraction digits required is 2.
+
+Now find the component used in our example.
+percentpipe.component.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'percent-app',
+  template: `
+            <h3>Percent Pipe</h3>
+	    <div>
+	      <p> {{num1 | percent}} </p>
+	      <p> {{num1 | percent:'2.2-5'}} </p>
+	      <p> {{num2 | percent:'1.2-5'}} </p>
+	      <p> {{num1 * num2 | percent:'1.2-3'}} </p>
+	    </div>
+         ` 
+})
+export class PercentPipeComponent {
+  num1: number = 2.5;
+  num2: number = 0.5;
+} Find the output.
+Percent Pipe
+250%
+250.00%
+50.00%
+125.00%  

@@ -1,0 +1,27 @@
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 150px;
+        padding:5px;
+        margin: 5px;
+        text-align: center;
+        color: blue;
+        float:left;
+        box-shadow:5px 5px 5px gray;
+    }
+</style>
+<h1 style="text-align: center;">User Interactive Pipe Implementation</h1>
+<hr/>
+<button [hidden]="isShow" (click)="nextItems_click()">Next</button>
+
+<div *ngFor="let item of empArray|slice:start:end">
+    <div class="c1">
+        <h3>{{item.empNo}} Details</h3><br/>
+        Name: {{item.empName|titlecase}}<br/>
+        Email: {{item.empEmail|lowercase}}<br/>
+        Gender: {{item.empGender}}<br/>
+        Grade:{{item.empGrade|gradePipe}}<br/>
+    </div>
+</div>

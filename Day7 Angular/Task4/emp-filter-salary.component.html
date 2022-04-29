@@ -30,7 +30,7 @@ Max Value: <input [(ngModel)]="tempMax"/>
     </tr>
     <tr *ngFor="let item of empArray | employeeSalaryFilterPipe:min:max">
         <td>{{item.empNo}}</td>
-        <td>{{item.empName}}</td>
+        <td>{{item.empName|titlecase}}</td>
         <td>{{item.empSalary}}</td>
     </tr>
 </table>

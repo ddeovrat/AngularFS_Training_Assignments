@@ -1,0 +1,36 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+<h1>Working with Salary Filter Task</h1>
+<hr/>
+
+Min Value: <input [(ngModel)]="tempMin"/>
+Max Value: <input [(ngModel)]="tempMax"/>
+<button (click)="manualFilter_click()">Filter</button><br/>
+
+<table>
+    <tr>
+        <th>Emp Number</th>
+        <th>Emp Name</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let item of empArray | employeeSalaryFilterPipe:min:max">
+        <td>{{item.empNo}}</td>
+        <td>{{item.empName}}</td>
+        <td>{{item.empSalary}}</td>
+    </tr>
+</table>

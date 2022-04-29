@@ -1,0 +1,27 @@
+
+<h1>Working with Services in Angular</h1>
+<hr/>
+
+<h4>Enter Data to Add User</h4>
+Name:<input [(ngModel)]="empName"/><br/>
+Emp Id: <input [(ngModel)]="empNo"/><br/>
+Salary: <input [(ngModel)]="empSalary"/><br/>
+<button (click)="addData_click()">Add Data</button><br/>
+<hr/>
+Enter Employee Id: <input [(ngModel)]="empNo">
+<button (click)="removeData_click()">Remove Data</button>
+
+<button (click)="getData_click()">GetData</button><br/>
+
+<table [width]="500" [cellSpacing]="0" [cellPadding]="4" border="2">
+    <tr>
+        <th>Emp Number</th>
+        <th>Emp Name</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let item of empsArray">
+        <td>{{item.empNo}}</td>
+        <td>{{item.empName|titlecase}}</td>
+        <td>{{item.empSalary}}</td>
+    </tr>
+</table>

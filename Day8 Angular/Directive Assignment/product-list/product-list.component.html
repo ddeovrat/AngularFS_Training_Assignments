@@ -1,0 +1,69 @@
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 150px;
+        padding:5px;
+        margin: 5px;
+        text-align: center;
+        color: blue;
+        float:left;
+        box-shadow:5px 5px 5px gray;
+    }
+</style>
+
+<h1>Working with Directives in Angular</h1>><br/>
+<hr/>
+<div>
+    Display Mode :  <img   (mouseover)="clickImage('Table')"   src="assets/Table.png" width="30" height="30"/> &nbsp;
+     <img   (mouseover)="clickImage('Large')"   src="assets/Large.png" width="30" height="30"/> 
+    &nbsp;<img (mouseover)="clickImage('Small')" src="assets/Small.png" width="30" height="30"/> &nbsp;
+    <img (mouseover)="clickImage('List')"  src="assets/List.png" width="30" height="30" />
+</div>
+
+<section [ngSwitch]="displayMode">
+    <article *ngSwitchCase="'Table'">
+        <table border="2" [cellSpacing]="0" [cellPadding]="5" [width]="500">
+            <tr>
+                <th>P.Id</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+            </tr>
+            <tr *ngFor="let item of productsArray; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{item.pname}}</td>
+                <td>{{item.brand}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+        </table>
+    </article>
+    <article *ngSwitchCase="'List'">
+        <ul>
+            <li *ngFor="let item of productsArray">
+                The {{item.pname}} of brand: {{item.brand}} is having cost of Rs: {{item.price}}
+            </li>
+        </ul>
+    </article>
+    <article *ngSwitchCase="'Large'">
+        <div *ngFor="let item of productsArray">
+            <div class="c1">
+                <img  class="images" src={{item.picture}} width="150"/>
+                Name: {{item.pname}}<br/>
+                Cost: {{item.price}}<br/>
+            </div>
+        </div>
+    </article>
+    <article *ngSwitchDefault>
+        <div *ngFor="let item of productsArray">
+            <div class="c1">
+                <img  class="images" src={{item.picture}} width="80"/>
+                <h3>Product Id: {{item.pid}}</h3><br/>
+                Name: {{item.pname}}<br/>
+                Brand: {{item.brand|uppercase}}<br/>
+                Cost: {{item.price}}<br/>
+            </div>
+        </div>
+    </article>
+</section>

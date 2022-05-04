@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    div {
+  width: 320px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: auto;
+  color: black;
+  }
+  .strikethrough {
+    text-decoration: line-through;
+}
+</style>
+<h3 style="text-align: center;">Todo Input</h3>
+<div>
+    <i class="fa fa-envelope icon"></i>
+    <input [(ngModel)]="taskToDo" style="padding-left: 1px; margin-right: 1px; margin-left:1.5px;" placeholder="New Todo" class="input-field" type="text">
+    <button (click)="addData_click()">Add new Task</button>
+</div>
+<h3 style="text-align: center;">Todo List</h3>
+<div *ngFor="let item of todoArray">
+  <p>{{item.id}} 
+    <span [ngClass]="{'strikethrough':item.check}" style="margin-left: 50px;">{{item.task}}</span>
+    <i (click)="removeTodoData(item.id)" style="margin-left: 50px;" class="fa fa-trash"></i>
+    <i [ngClass]="{'strikethrough':item.check}" (click)="updateTodoData(item.id)" style="margin-left: 50px;" class='fa fa-edit'></i>
+    <input type="checkbox" style="float: right;"  [checked]="item.check"  (change)="updateTodoData(item.id)" >
+  </p>  
+</div>
+<div>
+  <button (click)="deleteDoneTask()">Delete done tasks</button>
+  <button (click)="deleteAllTask()">Delete All tasks</button>
+</div>

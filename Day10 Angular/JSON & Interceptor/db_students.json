@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "studentId": 10,
+      "studentName": "Abhinash",
+      "studentCity": "Hajipur"
+    },
+    {
+      "studentId": 11,
+      "studentName": "Swati",
+      "studentCity": "Hilsa"
+    },
+    {
+      "studentId": 12,
+      "studentName": "Deepankar",
+      "studentCity": "Patna"
+    },
+    {
+      "studentId": "13",
+      "studentName": "Raj Chanchal",
+      "studentCity": "Patna"
+    }
+  ]
+}

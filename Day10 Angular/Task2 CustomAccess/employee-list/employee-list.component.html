@@ -1,0 +1,41 @@
+<h2>Performing CRUD</h2>
+<input type="text"  [(ngModel)]="id"  placeholder="Employee Id"  />
+<input type="text"  [(ngModel)]="name"  placeholder="Employee Name"  />
+<input type="text"  [(ngModel)]="city"  placeholder="City Name"  />
+<input type="text"  [(ngModel)]="designation"  placeholder="Designation"  />
+<input type="text"  [(ngModel)]="salary"  placeholder="Salary"  />
+<input type="text"  [(ngModel)]="departmentNumber"  placeholder="Department Number"  />
+
+<br/><br/>
+<input type="button"  value="Get Employees" (click)="getData_click()"  />
+<input type="button"  value="Add Employee" (click)="addData_click()"  />
+<input type="button"  value="Update Employee" (click)="updateData_click()"  />
+<input type="button"  value="Clear Fields" (click)="clearFields()"  />
+<hr/>
+
+<table border="2" [cellSpacing]="0">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>City Name</th>
+        <th>Designation</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let item of EmployeesArray">
+        <td>{{item.employeeId}}</td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.employeeCity}}</td>
+        <td>{{item.employeeDesignation}}</td>
+        <td>{{item.employeeSalary}}</td>
+        <td>{{item.employeeDepartmentNumber}}</td>
+    </tr>
+</table>
+<hr/><hr/>
+
+<button (click)="getData2_click()">Get Managers with Department</button>
+<button (click)="getData3_click()">Get Employee Name & Job</button>
+<button (click)="getData4_click()">Get Employee Not in Dept 10</button>
+<button (click)="getData5_click()">Sort Employee on Salary</button>
+<hr/>
+
+{{result | json}}

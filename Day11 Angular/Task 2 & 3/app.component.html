@@ -1,0 +1,25 @@
+<!-- <app-todo-item></app-todo-item> -->
+<!-- <app-avatar-assignment></app-avatar-assignment> -->
+<!-- <app-students-list></app-students-list> -->
+<!-- <app-employee-list></app-employee-list> -->
+<!-- <app-login></app-login>
+<app-employee-list></app-employee-list> -->
+<!-- <app-model-driven-demo></app-model-driven-demo> -->
+
+<style>
+    .shadow {
+    color: black;
+    text-shadow: 2px 2px red;
+   }
+</style>
+ 
+ <div>     
+    <p class="shadow" appShadowDirective> Attribute custom directive text </p>    
+    <p class="shadow"  [appShadowDirective]="'Blue'"> Attribute custom directive text </p>
+    <p class="shadow"  [appShadowDirective]="'Green'"> Attribute custom directive text </p> 
+ </div>
+
+ <p *appIsAdmin="true">This content is for Scott Admin</p>
+ <p *appIsAdmin="true">This content is for Smith Admin</p>
+ <p *appIsAdmin="false">This content is for Sam Admin</p>
+ <p *appIsAdmin="true">This content is for Robert Admin</p>

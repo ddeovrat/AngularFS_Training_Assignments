@@ -1,0 +1,57 @@
+<style>
+    .error{
+        color:red;
+    }
+    fieldset {
+  background-color: #eeeeee;
+}
+
+legend {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+
+input {
+  margin: 5px;
+}
+
+</style>
+<h3>Model Driven Form Demo</h3><hr/>
+<form [formGroup]="ownerForm" (submit)="submit_click()">
+    <fieldset>
+        <legend>Vehicle Owners Registration Form</legend>
+    Owner Name: <input type="text" formControlName="ownName"/>
+    <span *ngIf="ownerForm.controls['ownName'].invalid && ownerForm.controls['ownName'].dirty" class="error">Owner Name is required</span>
+    <br/><br/>
+
+    Owner Contact: <input type="text" formControlName="ownContact"/>
+    <span *ngIf="ownerForm.controls['ownContact'].invalid && ownerForm.controls['ownContact'].dirty" class="error">Owner Contact Number is required and minimum length is 10</span>
+    <br/><br/>
+
+    Owner Email: <input type="text" formControlName="ownEmail"/>
+    <span *ngIf="ownerForm.controls['ownEmail'].invalid && ownerForm.controls['ownEmail'].dirty" class="error">Owner Email is required or not in correct format</span>
+    <br/><br/>
+
+    Owner Vehicle Reg. No: <input type="text" formControlName="ownVehicleRegNo"/>
+    <span *ngIf="ownerForm.controls['ownVehicleRegNo'].invalid && ownerForm.controls['ownVehicleRegNo'].dirty" class="error">Owner Vehicle Number Number is wrong</span>
+    <br/><br/>
+
+    Owner Address: <input type="text" formControlName="ownAddress"/>
+    <span *ngIf="ownerForm.controls['ownAddress'].invalid && ownerForm.controls['ownAddress'].dirty" class="error">Owner Address is required</span>
+    <br/><br/>    
+
+    Vehicle Model Number: <input type="text" formControlName="ownVehicleModel"/>
+    <span *ngIf="ownerForm.controls['ownVehicleModel'].invalid && ownerForm.controls['ownVehicleModel'].dirty" class="error">Model Number minimum length is 10</span>
+    <br/><br/>
+
+    Vehicle Color: <input type="text" formControlName="ownVehicleColor"/>
+    <span *ngIf="ownerForm.controls['ownVehicleColor'].invalid && ownerForm.controls['ownVehicleColor'].dirty" class="error">Color is required</span>
+    <br/><br/>
+
+    Vehicle Year: <input type="text" formControlName="ownVehicleYear"/>
+    <span *ngIf="ownerForm.controls['ownVehicleYear'].invalid && ownerForm.controls['ownVehicleYear'].dirty" class="error">Vehicle must be from 2012 to 2022</span>
+    <br/><br/>
+    <button [disabled]="ownerForm.invalid">Register</button>
+    </fieldset>
+</form>

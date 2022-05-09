@@ -1,0 +1,16 @@
+<!-- <app-product-list></app-product-list> -->
+
+<!-- <app-employee-list [sortOrder]="selectedOrder" ></app-employee-list>
+<app-header (onSortingChanged)="updateSorting($event)"></app-header> -->
+<h3 align="center">Developing Single Page Application using Angular</h3>
+<hr/>
+
+<div style="text-align: center;">
+<a [routerLink]=" ['/'] ">Home</a>  |
+<a [routerLink]=" ['/Categories'] ">Categories</a>  |
+<a [routerLink]=" ['/About Us'] ">About Us</a>  |
+<a [routerLink]=" ['/Contact'] ">Contact</a>  |
+<a [routerLink]=" ['/Login'] ">Login</a> 
+</div>
+<hr/>
+<router-outlet></router-outlet>

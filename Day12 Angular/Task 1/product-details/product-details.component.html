@@ -1,0 +1,23 @@
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 150px;
+        padding:5px;
+        margin: 5px;
+        text-align: center;
+        color: blue;
+        float:left;
+        box-shadow:5px 5px 5px gray;
+    }
+</style>
+<div class="c1" *ngFor="let items of prodObj">
+    <h3>{{items.cateory}} Details</h3><br/>
+    Name: {{items.name}}<br/>
+    Id: {{items.id}}<br/>
+    Price: {{items.price}}<br/>
+</div>
+<div>
+    <a [routerLink]=" ['/Categories'] ">Back to Categories</a>
+</div>

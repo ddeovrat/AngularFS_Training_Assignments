@@ -1,0 +1,21 @@
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 150px;
+        padding:5px;
+        margin: 5px;
+        text-align: center;
+        color: blue;
+        float:left;
+        box-shadow:5px 5px 5px gray;
+    }
+</style>
+<div class="c1">
+    <h3>{{prodObj.category}} Details</h3><br/>
+    Name: {{prodObj.name}}<br/>
+    Id: {{prodObj.id}}<br/>
+    Price: {{prodObj.price}}<br/>
+    <a href="javascript:void(0)" (click)="remove(prodObj.id)">Remove</a>
+</div>

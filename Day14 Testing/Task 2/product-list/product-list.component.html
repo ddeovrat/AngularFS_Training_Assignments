@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="category"/>
+<div *ngFor="let item of prodyctListArray">
+    <app-product-details  
+     [prodObj]="item">
+     [onProdRemoved]="removeProd($event)"
+    </app-product-details>
+
+</div>
